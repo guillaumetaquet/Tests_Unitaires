@@ -32,7 +32,7 @@ namespace Tests_Unitaires
          public void NoCdInFile()
          {
              File fichier = RepertoireCourant.Cd("Test");
-             Assert.AreEqual(fichier, null);
+             Assert.AreEqual(null,fichier);
          }
 
          [TestMethod]
@@ -40,7 +40,7 @@ namespace Tests_Unitaires
          {
              RepertoireCourant.permission = 0;
              File fichier = RepertoireCourant.Cd("Test");
-             Assert.AreEqual(fichier, null);
+             Assert.AreEqual(null,fichier);
          }
 
          [TestMethod]
@@ -63,32 +63,34 @@ namespace Tests_Unitaires
              RepertoireCourant.Chmod(7);
              RepertoireCourant.Mkdir("Test");
              RepertoireCourant.Mkdir("Test2");
-             Assert.AreEqual(RepertoireCourant.Ls().Count, 2);
+             Assert.AreEqual(2, RepertoireCourant.Ls().Count);
          }
 
          [TestMethod]
          public void NotLs()
          {
-             Assert.AreEqual(RepertoireCourant.Ls().Count, 0);
+             Assert.AreEqual(0, RepertoireCourant.Ls().Count);
          }
 
          [TestMethod]
          public void NoPermissionsInLs()
          {
              RepertoireCourant.Chmod(0);
-             Assert.AreEqual(RepertoireCourant.Ls().Count, 0);
+             Assert.AreEqual(0, RepertoireCourant.Ls().Count);
          }
 
          [TestMethod]
-         public void GetPath() //to do
+         public void GetPath()
          {
-
+             Directory Test = new Directory("Test", RepertoireCourant);
+             Directory Test1 = new Directory("Test1", Test);
+             Assert.AreEqual(Test.Nom + "/" + Test1.Nom + "/", Test1.GetPath());
          }
 
         [TestMethod]
-        public void GetRoot() //to do
+        public void GetRoot()
          {
-             Directory Test = new Directory("Test", RepertoireCourant);
+            Directory Test = new Directory("Test", RepertoireCourant);
             Directory Test2 = new Directory("Test2", Test);
             Directory Test3 = new Directory("Test3", Test2);
             Assert.AreEqual(Test2, Test3.GetRoot());
@@ -135,7 +137,9 @@ namespace Tests_Unitaires
         [TestMethod]
        public void  GetName() //to do
         {
-
+            Directory Test = new Directory("Test", RepertoireCourant);
+            File TestFile = new File("TestFile", Test);
+            Assert.AreEqual("TestFile", TestFile.GetName());
         }
 
         [TestMethod]
@@ -185,12 +189,6 @@ namespace Tests_Unitaires
         }
 
         [TestMethod]
-        public void GetPermissions() //to do
-        {
-
-        }
-
-        [TestMethod]
         public void  Search()
         {
             RepertoireCourant.Chmod(7);
@@ -198,7 +196,7 @@ namespace Tests_Unitaires
             RepertoireCourant.Mkdir("Test2");
             RepertoireCourant.Mkdir("Test3");
             RepertoireCourant.Mkdir("Test3");
-            Assert.AreEqual(RepertoireCourant.Search("Test3").Count, 2);
+            Assert.AreEqual(2, RepertoireCourant.Search("Test3").Count);
         }
 
 
