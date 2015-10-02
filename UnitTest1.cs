@@ -8,39 +8,33 @@ namespace Tests_Unitaires
     public class UnitTest1
     {
         public Directory RepertoireCourant;
-        public File Test;
-        
+        public File Fichier;
+        public Directory Chemin;
+        public Directory CheminPlus;
+
         [TestInitialize]
         public void SetUp()
         {
            RepertoireCourant = new Directory("/", null);
-           RepertoireCourant.Mkdir("Repertoire1");
-           RepertoireCourant.createNewFile("Test");
+            Chemin = new Directory("chemin", RepertoireCourant);
         }
 
 
          [TestMethod]
         public void Cd()
         {
-            RepertoireCourant.Mkdir("Test");
-            Test = RepertoireCourant.Cd("Test");
-            File fichier = RepertoireCourant.Cd("Test");
-            Assert.AreEqual(fichier, Test);
+           Directory Java = new Directory("Java", RepertoireCourant);
+           RepertoireCourant.ListeFiles.Add(Java);
+           Assert.AreEqual(Java, RepertoireCourant.Cd(Java.Nom));
         }
-
-         [TestMethod]
-         public void NoCdInFile()
-         {
-             File fichier = RepertoireCourant.Cd("Test");
-             Assert.AreEqual(null,fichier);
-         }
 
          [TestMethod]
          public void NoPermissionsInCd()
          {
-             RepertoireCourant.permission = 0;
-             File fichier = RepertoireCourant.Cd("Test");
-             Assert.AreEqual(null,fichier);
+             RepertoireCourant.Chmod(0);
+             Directory Chemin = new Directory("chemin", RepertoireCourant);
+             File destination = RepertoireCourant.Cd("chemin");
+             Assert.AreEqual(destination, null);
          }
 
          [TestMethod]
@@ -84,7 +78,7 @@ namespace Tests_Unitaires
          {
              Directory Test = new Directory("Test", RepertoireCourant);
              Directory Test1 = new Directory("Test1", Test);
-             Assert.AreEqual(Test.Nom + "/" + Test1.Nom + "/", Test1.GetPath());
+             Assert.AreEqual("/" + Test.Nom + "/" + Test1.Nom + "/", Test1.GetPath());
          }
 
         [TestMethod]
@@ -105,7 +99,6 @@ namespace Tests_Unitaires
         [TestMethod]
          public void GetParent() //to do
         {
-
         }
 
         [TestMethod]
@@ -131,11 +124,11 @@ namespace Tests_Unitaires
         [TestMethod]
         public void NotIsFile()
         {
-           Assert.IsFalse(RepertoireCourant.IsFile());
+            Assert.IsFalse(Chemin.IsFile());
         }
 
         [TestMethod]
-       public void  GetName() //to do
+       public void  GetName()
         {
             Directory Test = new Directory("Test", RepertoireCourant);
             File TestFile = new File("TestFile", Test);
@@ -217,14 +210,17 @@ namespace Tests_Unitaires
         }
 
         [TestMethod]
-        public void CreateNewFile() //to do
+        public void CreateNewFile()
         {
-
+            RepertoireCourant.Chmod(7);
+            Assert.IsTrue(RepertoireCourant.createNewFile("Test"));
+            Assert.IsTrue(RepertoireCourant.ListeFiles.Count == 1);
         }
         [TestMethod]
-        public void NoPermissionsInCreateNewFile() //to do
+        public void NoPermissionsInCreateNewFile()
         {
-
+            Assert.IsFalse(RepertoireCourant.createNewFile("Test"));
+            Assert.IsTrue(RepertoireCourant.ListeFiles.Count == 0);
         }
     }
 }
