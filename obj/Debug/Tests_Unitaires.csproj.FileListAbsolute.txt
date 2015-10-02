@@ -1,0 +1,21 @@
+E:\Dropbox\Filesystem\TPFileSystem\Tests_Unitaires\bin\Debug\Tests_Unitaires.dll
+E:\Dropbox\Filesystem\TPFileSystem\Tests_Unitaires\bin\Debug\Tests_Unitaires.pdb
+E:\Dropbox\Filesystem\TPFileSystem\Tests_Unitaires\bin\Debug\TPFileSystem.exe
+E:\Dropbox\Filesystem\TPFileSystem\Tests_Unitaires\bin\Debug\TPFileSystem.pdb
+E:\Dropbox\Filesystem\TPFileSystem\Tests_Unitaires\obj\Debug\Tests_Unitaires.csprojResolveAssemblyReference.cache
+E:\Dropbox\Filesystem\TPFileSystem\Tests_Unitaires\obj\Debug\Tests_Unitaires.dll
+E:\Dropbox\Filesystem\TPFileSystem\Tests_Unitaires\obj\Debug\Tests_Unitaires.pdb
+E:\Dropbox\EPSI\Cours B2\C#\Application console\TPFileSystem\Tests_Unitaires\bin\Debug\Tests_Unitaires.dll
+E:\Dropbox\EPSI\Cours B2\C#\Application console\TPFileSystem\Tests_Unitaires\bin\Debug\Tests_Unitaires.pdb
+E:\Dropbox\EPSI\Cours B2\C#\Application console\TPFileSystem\Tests_Unitaires\bin\Debug\TPFileSystem.exe
+E:\Dropbox\EPSI\Cours B2\C#\Application console\TPFileSystem\Tests_Unitaires\bin\Debug\TPFileSystem.pdb
+E:\Dropbox\EPSI\Cours B2\C#\Application console\TPFileSystem\Tests_Unitaires\obj\Debug\Tests_Unitaires.csprojResolveAssemblyReference.cache
+E:\Dropbox\EPSI\Cours B2\C#\Application console\TPFileSystem\Tests_Unitaires\obj\Debug\Tests_Unitaires.dll
+E:\Dropbox\EPSI\Cours B2\C#\Application console\TPFileSystem\Tests_Unitaires\obj\Debug\Tests_Unitaires.pdb
+C:\Users\Guillaume\Documents\workspace\Tests_Unitaires\obj\Debug\Tests_Unitaires.csprojResolveAssemblyReference.cache
+C:\Users\Guillaume\Documents\workspace\Tests_Unitaires\obj\Debug\Tests_Unitaires.dll
+C:\Users\Guillaume\Documents\workspace\Tests_Unitaires\obj\Debug\Tests_Unitaires.pdb
+C:\Users\Guillaume\Documents\workspace\Tests_Unitaires\bin\Debug\Tests_Unitaires.dll
+C:\Users\Guillaume\Documents\workspace\Tests_Unitaires\bin\Debug\Tests_Unitaires.pdb
+C:\Users\Guillaume\Documents\workspace\Tests_Unitaires\bin\Debug\TPFileSystem.exe
+C:\Users\Guillaume\Documents\workspace\Tests_Unitaires\bin\Debug\TPFileSystem.pdb
